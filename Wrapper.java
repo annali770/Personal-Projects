@@ -1,4 +1,6 @@
-
+/*
+Wrapper class for Strings
+*/
 public class Wrapper {
 
     public String x;
