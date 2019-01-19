@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class HashTester {
+public class SpellCheckerTester {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
@@ -8,9 +8,7 @@ public class HashTester {
 		SpellChecker sc = new SpellChecker();
 		sc.createDict("words.txt");
 		sc.readFile("checkSpelling.txt");
-		System.out.println(sc.checkMisspellings());
-		
-		
+		System.out.println(sc.checkMisspellings());	
 		
 	}
 
