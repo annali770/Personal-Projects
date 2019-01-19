@@ -1,3 +1,8 @@
+/*
+Utilized HashSet and parsing using IO to create a SpellChecker
+*/
+
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
