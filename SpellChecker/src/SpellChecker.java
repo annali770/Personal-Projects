@@ -1,3 +1,7 @@
+/*
+ * SpellChecker using HashSet and parsing using IO
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
