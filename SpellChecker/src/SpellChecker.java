@@ -41,7 +41,7 @@ public class SpellChecker {
 
                 //Wrapper my_line = new Wrapper(arrayFile[i]);
                // array_file[i] = my_line;
-                parsedFile.add(arrayFile[i].toLowerCase().replaceAll("\\s+",""));
+                parsedFile.add(arrayFile[i].toLowerCase().replaceAll("\\s+","").replaceAll("\\p{P}", ""));
             }
         }
 
@@ -57,6 +57,7 @@ public class SpellChecker {
         ArrayList<String> misspelled = new ArrayList<String>();
 
         for (int i = 0; i<parsedFile.size(); i++) {
+        	System.out.println(parsedFile.get(i));
             if (!words.contains(parsedFile.get(i))) {
                 misspelled.add(parsedFile.get(i));
             }
