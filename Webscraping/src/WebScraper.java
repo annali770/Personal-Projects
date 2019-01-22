@@ -1,3 +1,12 @@
+/*
+ * Created by Anna Li 1/21/19
+ * 
+ * Java application that utilizes a webscraper to read ingredients to a skincare
+ * product, used to determine what ingredients the user might be allergic to
+ * 
+ * 
+ * TO DO: update cerave for non-water based/ointment products, add more company websites
+ */
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,17 +31,31 @@ public class WebScraper {
         createCompanies();
     }
     
+    //helper function; populates arraylist w/ company websites can webscrape from
+    //ADD MORE
     private void createCompanies() {
     	companies.add("innisfree");
     	companies.add("cerave");
-    	companies.add("nyx");
     }
     
+    //@return companies currently added
+    public ArrayList<String> getCompanies() {
+    	return companies;
+    }
+    
+    /*
+     * @post connects program to website webscraping from
+     */
     private void connectWebsite(String websiteUrl) throws IOException {
     	doc = Jsoup.connect(websiteUrl).get();
     }
     
-    public HashSet<String> insertIngredients(String websiteUrl, String company, Boolean isSafe) throws IOException {
+    /*
+     *  @post populates hashset of safe ingredients (based off of if user is allergic or not) 
+     *  	 and unclear ingredients (something in it caused the user to break out, but unclear)
+     * 		 prints out product name and ingredients of inserted product 
+     */
+    public void insertIngredients(String websiteUrl, String company, Boolean isSafe) throws IOException {
     	connectWebsite(websiteUrl);
     	System.out.println("Product: " + getProduct(websiteUrl));
 		
@@ -59,23 +82,28 @@ public class WebScraper {
 				}
 			}
 		}
-		
-		return safeIngredients;
     }
     
+    //@return hashset of safe ingredients
     public HashSet<String> getSafeIngredients() {
     	return safeIngredients;
     }
     
+    //@return hashset of unclear ingredients
     public HashSet<String> getUnclearIngredients() {
     	return unclearIngredients;
     }
     
+    /*
+     * helper function
+     * @return product name
+     */
     private String getProduct(String website) throws IOException {
 		String title = doc.title();
 		return title;
     }
     
+    //@post refreshes the list of safe/unclear ingredients to reflect newly added products
     public void refresh() {
     	Iterator<String> unclearIterator = unclearIngredients.iterator();
     	
@@ -86,12 +114,15 @@ public class WebScraper {
     	}
     }
     
+    //@return string with list of ingredients from Innisfree website
     private String getInnisfree() {
     	Elements content = doc.getElementsByClass("more-content");
 		String linkText = content.text().toLowerCase();
 		return linkText;
     }
     
+    //@return string with list of ingredients from Cerave website
+    //UPDATE WITH NON-WATER PRODUCTS
     private String getCerave() {
     	Elements content = doc.getElementsByClass("col-md-12");
     	String linkText = content.text().toLowerCase().replaceAll("\\.", ""); ;
