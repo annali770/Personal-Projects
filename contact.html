@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset = "utf-8"/>
+    <meta name = "author" content = "Anna Li">
+    <meta name = "keywords" content = "Carnegie Mellon University">
+    <meta name = "description" content = "Professional Website">
+
+    <meta name = "viewport" content ="width=device-width, initial-scale=1.0"/>
+
+    <!-- External Links to CSS files-->
+    <link rel = "stylesheet" media = "all" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" media = "all" type = "text/css" href = "css/jquery-ui.css" />
+    <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/stylesmobile.css"/>
+
+    <!-- External Links to JS files -->
+    <script src ="js/jquery-3.4.1.min.js"></script>
+    <script src = "js/jquery-ui.js"></script>
+    <script src = "js/scripts.js"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <script>
+        $(function() {
+            $('#container-graph').highcharts({
+                chart: {
+                    type: 'line'
+                },
+                title: {
+                    text: 'Weekly Workload by Month'
+                },
+                subtitle: {
+                    text: 'Source: WorldClimate.com'
+                },
+                xAxis: {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+                },
+                yAxis: {
+                    title: {
+                        text: 'Average Number of Hours Worked on School Each Week'
+                    }
+                },
+                plotOptions: {
+                    line: {
+                        dataLabels: {
+                            enabled: true
+                        },
+                        enableMouseTracking: false
+                    }
+                },
+                series: [{
+                    name: '2018',
+                    data: [7.0, 6.9, 9.5, 14.5, 5, 5, 5, 26.5, 23.3, 18.3, 13.9, 9.6]
+                }, {
+                    name: '2019',
+                    data: [3.9, 4.2, 5.7, 8.5, 6, 6, 6, 16.6, 14.2, 10.3, 6.6, 4.8]
+                }]
+
+            });
+        });
+    </script>
+
+    <title> Anna Li </title>
+
+</head>
+
+<body>
+    <nav>
+        <div class = "nav-wrapper">
+            <a href="index.html" class="brand-logo"> Anna Li </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href = "index.html"> About </a></li>
+                <li><a href = "projects.html"> Projects </a></li>
+                <li class="active"><a href = "contact.html"> Contact </a> </li>
+            </ul>
+        </div>
+    </nav>
+<div class = "container">
+        <h3> Contact </h3>
+        <p>Please use the below map to find me.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12145.880407881765!2d-79.95170996736013!3d40.44273106979158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834f21f58679a9f%3A0x88716b461fc4daf4!2sCarnegie%20Mellon%20University!5e0!3m2!1sen!2sus!4v1585149935183!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <p>Please check to see when I'm free.</p>
+        <div id="container-graph"></div>
+
+        <p> Please use this form to get in touch with me. </p>
+        <form onsubmit="return validate()">
+            <fieldset>
+            <legend> Tell me more about yourself</legend>
+            <label> Name </label> <br/>
+            <input type="text" size = "20" maxlength = "250" value= "Your Name"> <br/> <br/>
+            <label for ="txtDate"> Your date of birth (required) </label> <br/>
+            <input type = "date" id= "txtDate" name= "txtData" required><br/><br/>
+            </fieldset>
+
+            <fieldset>
+            <legend> Tell me about your preferences </legend>
+            <label> Your favorite flower color </label> <br/>
+            <input type = "color"> <br/> <br/>
+            <label> Message </label> <br/>
+            <textarea cols = "50" rows = "10" maxlength = "1000"> </textarea>
+            </fieldset>
+
+            <fieldset>
+            <legend> Let's stay in touch </legend>
+            <label> How did you find out about me? </label> <br/>
+
+            <select>
+                <option value = "Google" selected> Google </option>
+                <option value = "News Article"> News Article </option>
+                <option value = "Friends"> Friends </option>
+                <option value = "Other"> Other </option>
+            </select>
+
+            <br/> <br/>
+            <label> Please indicate if you want to receive news updates via email </label> <br/>
+            <label> Yes, please update me! </label>
+            <input type = "checkbox">  <br/> <br/>
+
+            <label> Please provide your email address </label>
+            <input type = "email" value="abc@defg.com" required> <br/> <br/>
+
+            <label for="phone"> Please provide your phone number (no dashes or spaces): </label> <br/>
+            <input type = "text" id="phone" name="phone" value = "" placeholder = "1234567890" required> <br/><br/>
+
+            <label> Choose a password. </label>
+            <input type = "password"> <br/>
+            </fieldset>
+            <fieldset>
+            <input type="image" name = "submit" src ="images/submit.png" alt = "Submit">
+            </fieldset>
+        </form>
+        
+    </div>
+    <footer class = "page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l12 s12">
+                    <a href="mailto:jquesenberry@cmu.edu"><img src="images/email.png"></a>
+                    <a href="http://www.linkedin.com/in/anna-w-li/" target="_blank"><img src = "images/linkedin.png"></a>
+                    <a href="http://www.facebook.com/annali770/" target = "_blank"><img src= "images/facebook.png"></a>
+    
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; Anna Li <br/>
+                5000 Forbes Avenue <br/>
+                Pittsburgh, PA 15213 <br/>
+                412-268-0000 (h) <br/>
+                412-555-5555 (c) <br/> <br/>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

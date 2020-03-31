@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset = "utf-8"/>
+        <meta name = "author" content = "Anna Li">
+        <meta name = "keywords" content = "Carnegie Mellon University">
+        <meta name = "description" content = "Professional Website">
+
+        <meta name = "viewport" content ="width=device-width, initial-scale=1.0"/>
+    
+        <!-- External Links to CSS files-->
+        <link rel = "stylesheet" media = "all" type="text/css" href="css/styles.css" />
+        <link rel="stylesheet" media = "all" type = "text/css" href = "css/jquery-ui.css" />
+        <link rel="stylesheet" media="screen and (max-width: 480px)" href="css/stylesmobile.css"/>
+    
+        <!-- External Links to JS files -->
+        <script src ="js/jquery-3.4.1.min.js"></script>
+        <script src = "js/jquery-ui.js"></script>
+        <script src = "js/scripts.js"></script>
+
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script> 
+            $(document).ready(function() {
+                $('.collapsible').collapsible();
+            });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('.tabs').tabs();
+            });
+        </script>
+
+        <title> Anna Li </title>
+    </head>
+
+    <body>
+        <nav>
+            <div class = "nav-wrapper">
+                <a href="index.html" class="brand-logo"> Anna Li </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href = "index.html"> About </a></li>
+                    <li class="active"><a href = "projects.html"> Projects </a></li>
+                    <li><a href = "contact.html"> Contact </a> </li>
+                </ul>
+            </div>
+        </nav>
+
+    <div class="container">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header"> Case Analysis Project </div>
+                <div class="collapsible-body"><span> Loren ipsum dolor sit amet. </span></div>
+            </li>
+            <li>
+                <div class="collapsible-header"> Web Development Project </div>
+                <div class="collapsible-body"><span> Lorem ipsum dolor sit amet.</span></div>
+            </li>
+            <li>
+                <div class="collapsible-header">Database Project</div>
+                <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+            </li>
+        </ul> 
+        <br> <br>
+
+        <div class = "row">
+            <div class="col s12">
+                <ul class ="tabs">
+                    <li class="tab col s3"> <a class="active" href = "#tab1"> Case Analysis Project </a></li>
+                    <li class="tab col s3"><a href = "#tab2"> Web Dev Project </a></li>
+                    <li class="tab col s3"><a href = "#tab3"> Database Project </a></li>
+                </ul>
+            </div>
+            <div id = "tab1" class="col s12">
+                <p>Suspendisse scelerisque erat pulvinar dolor 
+                    pulvinar, non blandit est efficitur. Aliquam vestibulum 
+                    mauris eget augue tempor, ullamcorper iaculis ligula 
+                    lacinia. Donec dignissim neque quis nunc pretium tristique. 
+                    Praesent facilisis est sed pulvinar dapibus.</p>
+            </div>
+            <div id = "tab2" class="col s12">
+                <p> Ut tortor dolor, faucibus vitae neque sit amet, 
+                    porttitor dictum diam. Ut venenatis justo vitae diam
+                     hendrerit, vel aliquet neque vulputate. In ut mi euismod, 
+                     vehicula elit ut, elementum erat. Nam rutrum non diam non 
+                     aliquet. Praesent elementum imperdiet mauris a porttitor.</p>
+            </div>
+            <div id = "tab3" class="col s12">
+                <p> Praesent fermentum egestas ante, vel pellentesque ante pharetra
+                     tempus. Morbi scelerisque, ipsum vitae mattis varius, sapien diam 
+                     fringilla purus, at hendrerit ipsum quam vel odio. Phasellus consectetur 
+                     mi ante, ac pretium leo sodales non. Nunc malesuada leo mi, quis mollis 
+                     arcu ornare nec.</p>
+            </div>
+        </div>
+        <table>
+                <tr>
+                    <th colspan="3">Course Projects</th>
+                </tr>
+                <tr>
+                    <th> Title </th>
+                    <th> Course </th>
+                    <th> Semester </th>
+                </tr>
+                <tr onmouseover="showDescription('Case Analysis Project involving analyzing Apple\'s wearable strategy')"
+                     onmouseout=hideDescription()>
+                    <td> Case Analysis Project </td>
+                    <td> 67-250 </td>
+                    <td> Spring 2019 </td>
+                </tr>
+                <tr onmouseover = "showDescription('Web Development Project involving fixing the website for a local organization')"
+                    onmouseout = hideDescription()> 
+                    <td> Web Development Project </td>
+                    <td> 67-250 </td>
+                    <td> Spring 2019 </td>
+                </tr>
+                <tr onmouseover = "showDescription('Database Project involving building a database for a local organization')"
+                    onmouseout = hideDescription()>
+                    <td> Database Project </td>
+                    <td> 67-250 </td>
+                    <td> Spring 2019 </td>
+                </tr>
+
+        </table>
+        <br>
+        <br>
+        <div id = "description"></div>
+        </div>
+        
+<footer class = "page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l12 s12">
+                <a href="mailto:jquesenberry@cmu.edu"><img src="images/email.png"></a>
+                <a href="http://www.linkedin.com/in/anna-w-li/" target="_blank"><img src = "images/linkedin.png"></a>
+                <a href="http://www.facebook.com/annali770/" target = "_blank"><img src= "images/facebook.png"></a>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            &copy; Anna Li <br/>
+            5000 Forbes Avenue <br/>
+            Pittsburgh, PA 15213 <br/>
+            412-268-0000 (h) <br/>
+            412-555-5555 (c) <br/> <br/>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>
